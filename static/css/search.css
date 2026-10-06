@@ -1,0 +1,545 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111111;
+    background-color: #ffffff;
+    line-height: 1.5;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header {
+    height: 80px;
+    border-bottom: 1px solid #eeeeee;
+    background-color: #ffffff;
+}
+
+
+.header-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+.logo span {
+    font-weight: 400;
+}
+
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+
+.nav a {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.nav a:hover {
+    color: #777777;
+}
+
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.action-button {
+    border: none;
+    background: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.action-button:hover,
+.action-button.active {
+    color: #777777;
+}
+
+
+
+/* ==========================================
+   SEARCH PAGE
+========================================== */
+
+.search-page {
+    min-height: 700px;
+    padding: 80px 0 100px;
+}
+
+
+.search-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+.search-small {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+
+.search-title h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+
+.search-title p {
+    color: #666666;
+}
+
+
+
+/* ==========================================
+   SEARCH FORM
+========================================== */
+
+.search-form {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 70px;
+
+    display: flex;
+
+    border: 1px solid #111111;
+}
+
+
+.search-form input {
+    flex: 1;
+
+    height: 60px;
+
+    border: none;
+    outline: none;
+
+    padding: 0 20px;
+
+    font-size: 16px;
+}
+
+
+.search-form button {
+    width: 150px;
+
+    border: none;
+
+    background-color: #111111;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.search-form button:hover {
+    background-color: #333333;
+}
+
+
+
+/* ==========================================
+   RESULT TITLE
+========================================== */
+
+.result-title {
+    margin-bottom: 30px;
+}
+
+
+.result-title h2 {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+
+.result-title p {
+    color: #666666;
+}
+
+
+
+/* ==========================================
+   PRODUCT GRID
+========================================== */
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+.product-card {
+    background-color: #ffffff;
+}
+
+
+.product-image {
+    position: relative;
+
+    width: 100%;
+    height: 400px;
+
+    overflow: hidden;
+
+    background-color: #f5f5f5;
+}
+
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.sale-badge {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    background-color: #111111;
+    color: #ffffff;
+
+    padding: 6px 10px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.product-info {
+    padding: 18px 0;
+}
+
+
+.product-category {
+    font-size: 12px;
+    color: #777777;
+
+    margin-bottom: 5px;
+}
+
+
+.product-info h3 {
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+.sale-price {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.old-price {
+    color: #999999;
+    text-decoration: line-through;
+    font-size: 13px;
+}
+
+
+.add-to-cart {
+    width: 100%;
+
+    height: 42px;
+
+    border: 1px solid #111111;
+
+    background-color: #111111;
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.add-to-cart:hover {
+    background-color: #ffffff;
+    color: #111111;
+}
+
+
+
+/* ==========================================
+   NO RESULT
+========================================== */
+
+.no-result {
+    text-align: center;
+
+    padding: 80px 20px;
+
+    border: 1px solid #eeeeee;
+}
+
+
+.no-result h2 {
+    margin-bottom: 10px;
+}
+
+
+.no-result p {
+    color: #666666;
+    margin-bottom: 25px;
+}
+
+
+.no-result a {
+    display: inline-block;
+
+    background-color: #111111;
+    color: #ffffff;
+
+    padding: 12px 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+
+/* ==========================================
+   SEARCH GUIDE
+========================================== */
+
+.search-guide {
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background-color: #f7f7f7;
+}
+
+
+.search-guide h2 {
+    margin-bottom: 10px;
+}
+
+
+.search-guide p {
+    color: #666666;
+}
+
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer {
+    background-color: #111111;
+    color: #ffffff;
+
+    padding: 60px 0;
+}
+
+
+.footer-content {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+
+.footer h3 {
+    margin-bottom: 15px;
+}
+
+
+.footer h4 {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+
+.footer p {
+    color: #bbbbbb;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+
+.footer a {
+    display: block;
+
+    color: #bbbbbb;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+
+.footer a:hover {
+    color: #ffffff;
+}
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .nav {
+        gap: 15px;
+    }
+
+
+    .header-actions {
+        display: none;
+    }
+
+
+    .product-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .footer-content {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        height: auto;
+        padding: 20px 0;
+    }
+
+
+    .header-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .search-page {
+        padding: 50px 0 70px;
+    }
+
+
+    .search-title h1 {
+        font-size: 30px;
+    }
+
+
+    .search-form {
+        flex-direction: column;
+    }
+
+
+    .search-form input {
+        width: 100%;
+    }
+
+
+    .search-form button {
+        width: 100%;
+        height: 55px;
+    }
+
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .product-image {
+        height: 450px;
+    }
+
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+}

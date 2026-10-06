@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sản phẩm - MENSTYLE</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/products.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="header">
+
+    <div class="container header-container">
+
+        <a href="/" class="logo">
+            MEN<span>STYLE</span>
+        </a>
+
+
+        <nav class="nav">
+
+            <a href="/">
+                Trang chủ
+            </a>
+
+            <a href="/category">
+                Danh mục
+            </a>
+
+            <a href="/search">
+                Tìm kiếm
+            </a>
+
+            <a href="/products" class="active">
+                Sản phẩm
+            </a>
+
+            <a href="/promotion">
+                Khuyến mãi
+            </a>
+
+        </nav>
+
+
+        <div class="header-actions">
+
+            <a href="/search">
+                Tìm kiếm
+            </a>
+
+            <button type="button">
+                Tài khoản
+            </button>
+
+            <button type="button">
+                Giỏ hàng
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================
+     PRODUCT PAGE
+========================================== -->
+
+<main class="products-page">
+
+    <div class="container">
+
+
+        <!-- PAGE TITLE -->
+
+        <div class="page-title">
+
+            <p>
+                MENSTYLE SHOP
+            </p>
+
+            <h1>
+                TẤT CẢ SẢN PHẨM
+            </h1>
+
+            <span>
+                Khám phá các sản phẩm thời trang nam
+                của MENSTYLE.
+            </span>
+
+        </div>
+
+
+
+        <!-- PRODUCT COUNT -->
+
+        <div class="product-top">
+
+            <p>
+                Có {{ products|length }} sản phẩm
+            </p>
+
+        </div>
+
+
+
+        <!-- PRODUCT GRID -->
+
+        {% if products %}
+
+        <div class="product-grid">
+
+            {% for product in products %}
+
+            <article class="product-card">
+
+
+                <!-- IMAGE -->
+
+                <div class="product-image">
+
+                    <img
+                        src="{{ url_for('static', filename=product.image) }}"
+                        alt="{{ product.name }}"
+                    >
+
+                </div>
+
+
+                <!-- INFORMATION -->
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        {{ product.category }}
+                    </p>
+
+                    <h2>
+                        {{ product.name }}
+                    </h2>
+
+
+                    <div class="price">
+
+                        <span class="current-price">
+                            {{ "{:,.0f}".format(product.price).replace(",", ".") }}đ
+                        </span>
+
+                        {% if product.old_price %}
+
+                        <span class="old-price">
+                            {{ "{:,.0f}".format(product.old_price).replace(",", ".") }}đ
+                        </span>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <div class="product-actions">
+
+                        <a
+                            href="{{ url_for('product_detail', product_id=product.id) }}"
+                            class="detail-button"
+                        >
+                            XEM CHI TIẾT
+                        </a>
+
+                        <button
+                            type="button"
+                            class="add-to-cart"
+                        >
+                            THÊM VÀO GIỎ
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+
+        {% else %}
+
+        <div class="no-product">
+
+            <h2>
+                Chưa có sản phẩm
+            </h2>
+
+            <p>
+                Hiện tại cửa hàng chưa có sản phẩm.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+</main>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <div>
+
+            <h3>
+                MENSTYLE
+            </h3>
+
+            <p>
+                Thời trang nam hiện đại,
+                đơn giản và phù hợp
+                với phong cách của bạn.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                SHOP
+            </h4>
+
+            <a href="/products">
+                Tất cả sản phẩm
+            </a>
+
+            <a href="/category/Áo%20nam">
+                Áo nam
+            </a>
+
+            <a href="/category/Quần%20nam">
+                Quần nam
+            </a>
+
+            <a href="/category/Áo%20khoác">
+                Áo khoác
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                HỖ TRỢ
+            </h4>
+
+            <a href="#">
+                Chính sách giao hàng
+            </a>
+
+            <a href="#">
+                Chính sách đổi trả
+            </a>
+
+            <a href="#">
+                Hướng dẫn mua hàng
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                LIÊN HỆ
+            </h4>
+
+            <p>
+                0123 456 789
+            </p>
+
+            <p>
+                support@menstyle.vn
+            </p>
+
+            <p>
+                Hà Nội, Việt Nam
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 MENSTYLE.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<script
+    src="/static/js/products.js"
+></script>
+
+
+</body>
+
+</html>

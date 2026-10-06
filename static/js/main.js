@@ -1,0 +1,1 @@
+console.log("MENSTYLE website is running!");
